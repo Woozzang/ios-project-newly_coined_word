@@ -1,24 +1,160 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Search View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="SearchViewController" customModule="NewlyCoinedWord" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="IVC-rV-6My">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="N46-qj-7W5" appends="YES" id="Y31-7Q-Mb7"/>
+                                </connections>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uJE-ME-Ih6">
+                                <rect key="frame" x="20" y="44" width="374" height="50"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4yp-rU-Xt2">
+                                        <rect key="frame" x="0.0" y="0.0" width="324" height="50"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BJQ-k7-icN">
+                                        <rect key="frame" x="324" y="0.0" width="50" height="50"/>
+                                        <subviews>
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9dM-BY-x0l">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="50" id="bIB-mj-hV2"/>
+                                                </constraints>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" image="magnifyingglass" catalog="system">
+                                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="didTapSearchButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MHl-jP-QIR"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="7Ac-oa-AeQ"/>
+                                            <constraint firstAttribute="trailing" secondItem="9dM-BY-x0l" secondAttribute="trailing" id="8ap-mu-oU1"/>
+                                            <constraint firstAttribute="bottom" secondItem="9dM-BY-x0l" secondAttribute="bottom" id="OAS-9h-oQN"/>
+                                            <constraint firstItem="9dM-BY-x0l" firstAttribute="top" secondItem="BJQ-k7-icN" secondAttribute="top" id="UTU-TJ-xa9"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="U3X-TL-ehB"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Uwj-Mh-HRC">
+                                <rect key="frame" x="20" y="114" width="150" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YFM-7C-RTu" customClass="TagButton" customModule="NewlyCoinedWord" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                        <state key="normal">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didTapTagButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hFe-iT-dr7"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yED-6L-qyu" customClass="TagButton" customModule="NewlyCoinedWord" customModuleProvider="target">
+                                        <rect key="frame" x="40" y="0.0" width="30" height="30"/>
+                                        <state key="normal">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didTapTagButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6on-3i-tph"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X8N-x3-9kL" customClass="TagButton" customModule="NewlyCoinedWord" customModuleProvider="target">
+                                        <rect key="frame" x="80" y="0.0" width="30" height="30"/>
+                                        <state key="normal">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didTapTagButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6TR-Lg-z2Y"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f9W-lh-aOA" customClass="TagButton" customModule="NewlyCoinedWord" customModuleProvider="target">
+                                        <rect key="frame" x="120" y="0.0" width="30" height="30"/>
+                                        <state key="normal">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didTapTagButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="G8p-9J-iZo"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SNU-2g-qxx">
+                                <rect key="frame" x="20" y="448" width="374" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="uJE-ME-Ih6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="4TU-os-AVv"/>
+                            <constraint firstItem="IVC-rV-6My" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="4pW-Zh-h1L"/>
+                            <constraint firstItem="Uwj-Mh-HRC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="4ri-6y-TW3"/>
+                            <constraint firstItem="Uwj-Mh-HRC" firstAttribute="top" secondItem="uJE-ME-Ih6" secondAttribute="bottom" constant="20" id="Lg3-HG-SuF"/>
+                            <constraint firstItem="SNU-2g-qxx" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="TUj-VC-gfY"/>
+                            <constraint firstItem="uJE-ME-Ih6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="UgX-93-Z5V"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uJE-ME-Ih6" secondAttribute="trailing" constant="20" id="XJP-Xd-Xt9"/>
+                            <constraint firstItem="SNU-2g-qxx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="beV-gK-crh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SNU-2g-qxx" secondAttribute="trailing" constant="20" id="cBx-43-ieH"/>
+                            <constraint firstItem="SNU-2g-qxx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="dYg-Ap-nEt"/>
+                            <constraint firstAttribute="bottom" secondItem="IVC-rV-6My" secondAttribute="bottom" id="mnH-ab-w4H"/>
+                            <constraint firstItem="IVC-rV-6My" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="wrL-SS-5O2"/>
+                            <constraint firstItem="IVC-rV-6My" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="zBB-w6-xvP"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="resultLabel" destination="SNU-2g-qxx" id="kR7-v9-ulY"/>
+                        <outlet property="searchStackView" destination="uJE-ME-Ih6" id="9sL-U0-jl8"/>
+                        <outlet property="searchTextField" destination="4yp-rU-Xt2" id="pVs-wP-SVN"/>
+                        <outlet property="tapGestureRecognizer" destination="N46-qj-7W5" id="Tcp-8M-QWk"/>
+                        <outletCollection property="tagButtons" destination="YFM-7C-RTu" collectionClass="NSMutableArray" id="fwS-A2-o6B"/>
+                        <outletCollection property="tagButtons" destination="yED-6L-qyu" collectionClass="NSMutableArray" id="fFw-1P-H3b"/>
+                        <outletCollection property="tagButtons" destination="X8N-x3-9kL" collectionClass="NSMutableArray" id="nkk-cB-M6S"/>
+                        <outletCollection property="tagButtons" destination="f9W-lh-aOA" collectionClass="NSMutableArray" id="tOQ-si-3W9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="N46-qj-7W5">
+                    <connections>
+                        <action selector="didTap:" destination="BYZ-38-t0r" id="zCJ-nA-3Ys"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="-10" y="58"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="background" width="300" height="300"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
